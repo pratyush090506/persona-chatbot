@@ -9,7 +9,7 @@ const kshitijPrompt = require("./prompts/kshitij");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const ALLOWED_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5173";
+const ALLOWED_ORIGIN = (process.env.CLIENT_ORIGIN || "http://localhost:5173").replace(/\/$/, "");
 
 app.use(cors({ origin: ALLOWED_ORIGIN }));
 app.use(express.json());
